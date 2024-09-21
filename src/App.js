@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Dashboard from './Components/Dsahboard';
+import EmployeeList from './Components/EmployeeList';
+import CreateEmployee from './Components/CreateEmployee';
+import Login from './Components/Login';
+import Signin from "./Components/Signin";
+import EditData from './Components/EditData';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <Login /> */}
+
+      {/* <Navbar /> */}
+      <Routes>
+        <Route path='/' element={<Login />}/>
+        <Route path='/signin' element={<Signin />}/>
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/employeeList' element={<EmployeeList />} />
+        <Route path='/createEmployee' element={<CreateEmployee />} />
+        <Route path='/edit/' element={<EditData />}/>
+      </Routes>
+
     </div>
   );
 }
